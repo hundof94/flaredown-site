@@ -1,10 +1,50 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, AlertCircle } from "lucide-react";
 import { StudyRow } from "@/components/shared/StudyRow";
-import { STUDIES } from "@/lib/mock-data";
+import type { Study } from "@/lib/types";
+
+function StudyRowSkeleton() {
+  return (
+    <div className="flex flex-col sm:flex-row sm:items-start gap-3 py-4 border-b border-ink/8 last:border-0 animate-pulse">
+      <div className="sm:w-16 flex-shrink-0">
+        <div className="h-4 w-10 bg-ink/10 rounded mx-auto" />
+      </div>
+      <div className="flex-1 min-w-0 space-y-2">
+        <div className="h-4 w-3/4 bg-ink/10 rounded" />
+        <div className="h-3 w-1/3 bg-ink/8 rounded" />
+        <div className="h-3.5 w-full bg-ink/8 rounded" />
+      </div>
+      <div className="sm:w-32 flex-shrink-0">
+        <div className="h-5 w-16 bg-ink/10 rounded-pill" />
+      </div>
+    </div>
+  );
+}
 
 export function StudyTracker() {
-  const recent = STUDIES.slice(0, 3);
+  const [studies, setStudies] = useState<Study[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function load() {
+      try {
+        const res = await fetch("/api/studies", { cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data: Study[] = await res.json();
+        setStudies(data.slice(0, 3));
+      } catch (err) {
+        console.error("Studies fetch error:", err);
+        setError("Could not load studies.");
+      } finally {
+        setLoading(false);
+      }
+    }
+    load();
+  }, []);
 
   return (
     <section className="bg-surface-2 py-20 border-y border-ink/8">
@@ -29,13 +69,27 @@ export function StudyTracker() {
           </Link>
         </div>
 
+        {error && (
+          <div className="flex items-center gap-2 text-xs text-amber-400 bg-amber-500/10 border border-amber-500/20 rounded-lg px-3 py-2 mb-4">
+            <AlertCircle size={13} />
+            {error}
+          </div>
+        )}
+
         <div className="bg-surface rounded-card p-6 border border-ink/10">
-          {recent.map((study) => (
-            <StudyRow
-              key={study.id}
-              study={study}
-            />
-          ))}
+          {loading ? (
+            <>
+              <StudyRowSkeleton />
+              <StudyRowSkeleton />
+              <StudyRowSkeleton />
+            </>
+          ) : studies.length > 0 ? (
+            studies.map((study) => (
+              <StudyRow key={study.id} study={study} />
+            ))
+          ) : (
+            <p className="text-sm text-ink-3 text-center py-8">No studies found.</p>
+          )}
         </div>
 
         <div className="mt-6 text-center sm:hidden">

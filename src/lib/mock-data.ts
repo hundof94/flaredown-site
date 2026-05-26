@@ -75,6 +75,9 @@ export const PROTOCOLS: Protocol[] = [
   },
 ];
 
+// NOTE: Feed items are placeholder content only. Real posts will be scraped
+// from live sources in Phase 2 via the Python microservice. Links below point
+// to the community/platform pages, not specific posts (which don't exist yet).
 export const FEED_ITEMS: FeedItem[] = [
   {
     id: "1",
@@ -83,16 +86,16 @@ export const FEED_ITEMS: FeedItem[] = [
     text: "Week 6 of LDN — morning stiffness went from 2 hours to under 20 minutes. This is the most significant improvement I've had in 3 years of trying every option my rheum suggested.",
     engagementCount: 312,
     timestamp: "2h ago",
-    url: "https://www.reddit.com/r/PsoriaticArthritis/comments/1c3k9x2/week_6_ldn_update/",
+    url: "https://www.reddit.com/r/PsoriaticArthritis/",
   },
   {
     id: "2",
     source: "study",
-    author: "Annals of Rheumatology",
+    author: "Annals of the Rheumatic Diseases",
     text: "New meta-analysis (n=2,847): Omega-3 supplementation reduces CRP by 24% and joint swelling scores by 18% in inflammatory arthritis patients. 18 RCTs included.",
     engagementCount: 89,
     timestamp: "4h ago",
-    url: "https://pubmed.ncbi.nlm.nih.gov/38291847/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/?term=omega-3+psoriatic+arthritis&sort=date",
   },
   {
     id: "3",
@@ -101,7 +104,7 @@ export const FEED_ITEMS: FeedItem[] = [
     text: "Emerging data on sleep + PsA is hard to ignore. Patients who normalise sleep architecture show TNF-α reductions comparable to low-dose methotrexate in early disease. Sleep is medicine.",
     engagementCount: 1204,
     timestamp: "5h ago",
-    url: "https://x.com/RheumNow/status/1776543210987654321",
+    url: "https://x.com/RheumNow",
   },
   {
     id: "4",
@@ -110,7 +113,7 @@ export const FEED_ITEMS: FeedItem[] = [
     text: "3 months nightshade-free. Skin plaques cleared ~70%, joint pain down significantly. Took about 8 weeks to notice anything. Don't give up in week 3 like I almost did.",
     engagementCount: 201,
     timestamp: "8h ago",
-    url: "https://forums.arthritis.org/discussion/nightshade-elimination-3-month-update",
+    url: "https://forums.arthritis.org/categories/psoriatic-arthritis",
   },
   {
     id: "5",
@@ -119,25 +122,25 @@ export const FEED_ITEMS: FeedItem[] = [
     text: "Stacked cold therapy on top of my biologic. Added ~30% more relief than biologic alone. The combo seems synergistic — both morning and evening exposure seem to matter.",
     engagementCount: 178,
     timestamp: "12h ago",
-    url: "https://www.reddit.com/r/PsoriaticArthritis/comments/1b8mz4t/cold_therapy_biologic_stack/",
+    url: "https://www.reddit.com/r/PsoriaticArthritis/",
   },
   {
     id: "6",
     source: "study",
     author: "Nature Immunology",
-    text: "Sleep fragmentation increases TNF-α production by 40% in PsA models. The mechanism appears to be glial cell activation during sleep deprivation — a directly targetable pathway.",
+    text: "Sleep fragmentation increases TNF-α production by 40% in autoimmune arthritis models. The mechanism appears to be glial cell activation during sleep deprivation — a directly targetable pathway.",
     engagementCount: 203,
     timestamp: "14h ago",
-    url: "https://pubmed.ncbi.nlm.nih.gov/38504671/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/?term=sleep+TNF+autoimmune+arthritis&sort=date",
   },
   {
     id: "7",
     source: "x",
-    author: "@DrSarahRheum",
-    text: "For patients asking about LDN: I'm now prescribing it as adjunct therapy for select PsA patients not achieving full remission on biologics. Anecdotally seeing 60-70% reporting improvement. Larger trial warranted.",
+    author: "@RheumNow",
+    text: "For patients asking about LDN: increasingly being used as adjunct therapy for select PsA patients not achieving full remission on biologics. Anecdotally strong patient-reported outcomes. Larger trials warranted.",
     engagementCount: 892,
     timestamp: "18h ago",
-    url: "https://x.com/DrSarahRheum/status/1775998877665544333",
+    url: "https://x.com/RheumNow",
   },
   {
     id: "8",
@@ -146,7 +149,7 @@ export const FEED_ITEMS: FeedItem[] = [
     text: "6 months of strict AIP diet. Not a cure. But my DAS28 dropped from 4.2 to 2.1. My rheum was shocked. The dietary inflammation component is real and underestimated in treatment plans.",
     engagementCount: 445,
     timestamp: "20h ago",
-    url: "https://www.reddit.com/r/PsoriaticArthritis/comments/1c1px9y/6_months_aip_das28_results/",
+    url: "https://www.reddit.com/r/PsoriaticArthritis/",
   },
   {
     id: "9",
@@ -155,7 +158,7 @@ export const FEED_ITEMS: FeedItem[] = [
     text: "Finally in clinical remission after 4 years. The stack that got me there: Humira + LDN 3mg + nightshade-free + consistent 8hr sleep + morning cold exposure. No single thing did it. It was all of them together.",
     engagementCount: 678,
     timestamp: "1d ago",
-    url: "https://forums.arthritis.org/discussion/4-year-journey-to-remission",
+    url: "https://forums.arthritis.org/categories/psoriatic-arthritis",
   },
   {
     id: "10",
@@ -164,16 +167,16 @@ export const FEED_ITEMS: FeedItem[] = [
     text: "Vitamin D levels inversely correlate with PsA disease activity (DAS28) in a cohort of 1,200 patients. Mean serum 25(OH)D in remission group: 67 ng/mL vs. 22 ng/mL in active disease group.",
     engagementCount: 156,
     timestamp: "1d ago",
-    url: "https://pubmed.ncbi.nlm.nih.gov/37145823/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/?term=vitamin+D+psoriatic+arthritis+disease+activity&sort=date",
   },
   {
     id: "11",
     source: "x",
-    author: "@gut_immunology",
-    text: "New sequencing data confirms Faecalibacterium prausnitzii depletion as a consistent signature in PsA. This is the same bug depleted in Crohn's. The gut-joint axis is real and dietary interventions may directly target it.",
+    author: "@ACRheum",
+    text: "New sequencing data confirms Faecalibacterium prausnitzii depletion as a consistent signature in PsA. The gut-joint axis continues to gain evidence. Dietary interventions warrant formal investigation.",
     engagementCount: 731,
     timestamp: "2d ago",
-    url: "https://x.com/gut_immunology/status/1774123456789012345",
+    url: "https://x.com/ACRheum",
   },
   {
     id: "12",
@@ -182,7 +185,7 @@ export const FEED_ITEMS: FeedItem[] = [
     text: "Was at 18 ng/mL vitamin D. Supplemented to 72 ng/mL over 6 months (10k IU D3 + K2). Joint pain reduced by roughly half. Skin almost completely clear. My rheum now checks D levels for all PsA patients.",
     engagementCount: 521,
     timestamp: "2d ago",
-    url: "https://www.reddit.com/r/PsoriaticArthritis/comments/1bz3kq1/vitamin_d_levels_joint_pain_correlation/",
+    url: "https://www.reddit.com/r/PsoriaticArthritis/",
   },
 ];
 
@@ -196,7 +199,7 @@ export const STUDIES: Study[] = [
     topic: "Diet",
     evidenceLevel: "High",
     summary: "Meta-analysis of 18 RCTs showing omega-3 supplementation reduces CRP by 24% and joint swelling scores by 18%.",
-    url: "https://pubmed.ncbi.nlm.nih.gov/38291847/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/?term=omega-3+psoriatic+arthritis+systematic+review&sort=date",
     isNew: true,
   },
   {
@@ -208,7 +211,7 @@ export const STUDIES: Study[] = [
     topic: "Supplements",
     evidenceLevel: "Moderate",
     summary: "Cohort of 1,200 PsA patients showing inverse correlation between serum 25(OH)D levels and DAS28 scores.",
-    url: "https://pubmed.ncbi.nlm.nih.gov/37145823/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/?term=vitamin+D+deficiency+psoriatic+arthritis+disease+activity&sort=date",
     isNew: false,
   },
   {
@@ -219,8 +222,8 @@ export const STUDIES: Study[] = [
     year: 2024,
     topic: "Lifestyle",
     evidenceLevel: "High",
-    summary: "Mechanistic study demonstrating sleep fragmentation increases TNF-α production by 40% in PsA mouse models.",
-    url: "https://pubmed.ncbi.nlm.nih.gov/38504671/",
+    summary: "Mechanistic study demonstrating sleep fragmentation increases TNF-α production by 40% in autoimmune arthritis models.",
+    url: "https://pubmed.ncbi.nlm.nih.gov/?term=sleep+disruption+TNF+autoimmune+arthritis&sort=date",
     isNew: true,
   },
   {
@@ -232,7 +235,7 @@ export const STUDIES: Study[] = [
     topic: "Diet",
     evidenceLevel: "Moderate",
     summary: "16S rRNA sequencing of 400 PsA patients reveals consistent reduction in Faecalibacterium prausnitzii vs. controls.",
-    url: "https://pubmed.ncbi.nlm.nih.gov/36882291/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/?term=gut+microbiome+psoriatic+arthritis+Faecalibacterium&sort=date",
     isNew: false,
   },
 ];

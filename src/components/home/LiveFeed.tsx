@@ -38,7 +38,7 @@ export function LiveFeed() {
   return (
     <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-20">
       {/* Section header */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-3">
           <LiveDot />
           <h2 className="font-display text-h2 text-ink">Live community signal</h2>
@@ -52,6 +52,10 @@ export function LiveFeed() {
           Refresh
         </button>
       </div>
+      {/* Placeholder notice */}
+      <p className="text-xs text-ink-3 mb-6 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 inline-block">
+        ⚠️ Sample content only — links open the source community, not specific posts. Real-time scraping connects in Phase 2.
+      </p>
 
       {/* Source filter tabs */}
       <div className="flex gap-2 flex-wrap mb-8 border-b border-ink/8 pb-4">

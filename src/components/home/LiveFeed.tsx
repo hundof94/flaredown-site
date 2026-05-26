@@ -53,7 +53,7 @@ export function LiveFeed() {
         </button>
       </div>
       {/* Placeholder notice */}
-      <p className="text-xs text-ink-3 mb-6 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 inline-block">
+      <p className="text-xs text-ink-3 mb-6 bg-surface border border-ink/15 rounded-lg px-3 py-2 inline-block">
         ⚠️ Sample content only — links open the source community, not specific posts. Real-time scraping connects in Phase 2.
       </p>
 

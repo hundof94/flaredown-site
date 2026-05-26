@@ -159,11 +159,11 @@ export default function ProtocolDetailPage({ params }: { params: { slug: string 
 
       {/* Cautions */}
       {details.cautions.length > 0 && (
-        <div className="bg-amber-50 border border-amber-200 rounded-card p-5 mb-10">
-          <h3 className="font-semibold text-amber-800 mb-3">Important cautions</h3>
+        <div className="bg-amber-500/10 border border-amber-500/25 rounded-card p-5 mb-10">
+          <h3 className="font-semibold text-amber-400 mb-3">Important cautions</h3>
           <ul className="space-y-2">
             {details.cautions.map((caution, i) => (
-              <li key={i} className="flex items-start gap-2 text-sm text-amber-700">
+              <li key={i} className="flex items-start gap-2 text-sm text-amber-300/80">
                 <CheckCircle2 size={15} className="flex-shrink-0 mt-0.5" />
                 {caution}
               </li>

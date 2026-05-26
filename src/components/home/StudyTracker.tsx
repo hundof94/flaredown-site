@@ -7,17 +7,17 @@ export function StudyTracker() {
   const recent = STUDIES.slice(0, 3);
 
   return (
-    <section className="bg-ink py-20">
+    <section className="bg-surface-2 py-20 border-y border-ink/8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-end justify-between mb-10">
           <div>
             <p className="text-xs font-semibold text-primary uppercase tracking-widest mb-2">
               Research Tracker
             </p>
-            <h2 className="font-display text-h2 text-white">
+            <h2 className="font-display text-h2 text-ink">
               Latest studies
             </h2>
-            <p className="text-body text-white/60 mt-2 max-w-xl">
+            <p className="text-body text-ink-2 mt-2 max-w-xl">
               We monitor journals weekly and cross-reference findings with community reports.
             </p>
           </div>
@@ -29,12 +29,11 @@ export function StudyTracker() {
           </Link>
         </div>
 
-        <div className="bg-white/5 rounded-card p-6 border border-white/10">
+        <div className="bg-surface rounded-card p-6 border border-ink/10">
           {recent.map((study) => (
             <StudyRow
               key={study.id}
               study={study}
-              className="[&_h4]:text-white [&_.text-ink-2]:text-white/70 [&_.text-ink-3]:text-white/50 border-white/10"
             />
           ))}
         </div>

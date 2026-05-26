@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #F7F4EF;
-  --foreground: #1A1612;
+  --background: #0C0A08;
+  --foreground: #EDE7DE;
 }
 
 html {
@@ -20,6 +20,27 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-playfair), Georgia, serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0C0A08;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A2420;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3A302A;
+}
+
+/* Selection */
+::selection {
+  background: #E0723F33;
+  color: #EDE7DE;
 }
 
 @layer utilities {

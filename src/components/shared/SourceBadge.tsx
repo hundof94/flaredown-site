@@ -8,15 +8,15 @@ const CONFIG: Record<SourceType, { label: string; className: string }> = {
   },
   x: {
     label: "X",
-    className: "bg-black/8 text-ink border border-ink/15",
+    className: "bg-ink/10 text-ink border border-ink/20",
   },
   study: {
     label: "Study",
-    className: "bg-secondary/10 text-secondary border border-secondary/20",
+    className: "bg-secondary/15 text-secondary border border-secondary/25",
   },
   forum: {
     label: "Forum",
-    className: "bg-amber-100 text-amber-700 border border-amber-200",
+    className: "bg-amber-500/15 text-amber-400 border border-amber-500/25",
   },
 };
 

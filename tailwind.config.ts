@@ -10,30 +10,31 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#C8522A",
-          light: "#D97B56",
-          dark: "#A03D1A",
+          DEFAULT: "#E0723F",
+          light: "#EC9268",
+          dark: "#C05828",
         },
         secondary: {
-          DEFAULT: "#1D6B5A",
-          light: "#2A8A74",
-          dark: "#144D41",
+          DEFAULT: "#2DBF96",
+          light: "#3EDBA8",
+          dark: "#1E9070",
         },
-        background: "#F7F4EF",
+        background: "#0C0A08",
+        panel: "#080605",
         ink: {
-          DEFAULT: "#1A1612",
-          2: "#4A3F35",
-          3: "#8A7D72",
+          DEFAULT: "#EDE7DE",
+          2: "#C0B3A4",
+          3: "#6E6257",
         },
         surface: {
-          DEFAULT: "#FFFFFF",
-          2: "#F0EDE8",
+          DEFAULT: "#1A1714",
+          2: "#231E1A",
         },
         source: {
           reddit: "#FF4500",
-          x: "#000000",
-          study: "#1D6B5A",
-          forum: "#B8860B",
+          x: "#E8E2DA",
+          study: "#2DBF96",
+          forum: "#D4A843",
         },
       },
       fontFamily: {
@@ -65,16 +66,11 @@ const config: Config = {
           "0%": { opacity: "0", transform: "translateY(8px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        barFill: {
-          "0%": { width: "0%" },
-          "100%": { width: "var(--bar-width)" },
-        },
       },
       animation: {
         pulse: "pulse 2s ease-in-out infinite",
         "slide-up": "slideUp 0.4s ease forwards",
         "fade-in": "fadeIn 0.3s ease forwards",
-        "bar-fill": "barFill 0.8s ease forwards",
       },
     },
   },

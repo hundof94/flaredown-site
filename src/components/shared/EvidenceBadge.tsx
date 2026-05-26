@@ -2,9 +2,9 @@ import { cn } from "@/lib/utils";
 import type { EvidenceLevel } from "@/lib/types";
 
 const STYLES: Record<EvidenceLevel, string> = {
-  High: "bg-secondary/10 text-secondary border border-secondary/20",
-  Moderate: "bg-primary/10 text-primary border border-primary/20",
-  Low: "bg-amber-100 text-amber-700 border border-amber-200",
+  High: "bg-secondary/15 text-secondary border border-secondary/25",
+  Moderate: "bg-primary/15 text-primary border border-primary/25",
+  Low: "bg-amber-500/15 text-amber-400 border border-amber-500/25",
   Anecdotal: "bg-ink/8 text-ink-3 border border-ink/15",
 };
 

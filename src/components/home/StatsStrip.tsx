@@ -3,7 +3,7 @@ import { SITE_STATS } from "@/lib/mock-data";
 
 export function StatsStrip() {
   return (
-    <section className="bg-ink py-10">
+    <section className="bg-surface py-10 border-y border-ink/8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <StatCard

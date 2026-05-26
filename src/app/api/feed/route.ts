@@ -36,7 +36,16 @@ async function fetchReddit(): Promise<FeedItem[]> {
 
       if (!res.ok) continue;
       const data = await res.json();
-      const posts: any[] = data.data?.children ?? [];
+      interface RedditPost {
+        id: string;
+        author: string;
+        is_self: boolean;
+        selftext: string;
+        score: number;
+        created_utc: number;
+        permalink: string;
+      }
+      const posts: { data: RedditPost }[] = data.data?.children ?? [];
 
       for (const { data: post } of posts) {
         // Only self-posts with meaningful text
@@ -98,7 +107,7 @@ async function fetchPubMed(): Promise<FeedItem[]> {
         const title: string = s.title.replace(/\.$/, "");
         const authors: string = (s.authors ?? [])
           .slice(0, 2)
-          .map((a: any) => a.name)
+          .map((a: { name?: string }) => a.name)
           .join(", ");
         const year = (s.pubdate ?? "").split(" ")[0];
 
@@ -145,7 +154,14 @@ async function fetchTwitter(): Promise<FeedItem[]> {
       users[user.id] = { username: user.username, name: user.name };
     }
 
-    return (data.data ?? []).map((tweet: any) => {
+    interface Tweet {
+      id: string;
+      text: string;
+      author_id: string;
+      created_at: string;
+      public_metrics?: { like_count?: number; retweet_count?: number };
+    }
+    return (data.data ?? []).map((tweet: Tweet) => {
       const user = users[tweet.author_id] ?? { username: "unknown", name: "X user" };
       const createdAt = new Date(tweet.created_at).getTime() / 1000;
       return {

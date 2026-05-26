@@ -84,7 +84,7 @@ export async function GET(request: Request) {
       .filter((id) => result[id]?.title)
       .map((id) => {
         const s = result[id];
-        const pubTypes: string[] = (s.pubtype ?? []).map((p: any) =>
+        const pubTypes: string[] = (s.pubtype ?? []).map((p: string | { value?: string }) =>
           typeof p === "string" ? p : p.value ?? ""
         );
         const pubYear = parseInt((s.pubdate ?? "").split(" ")[0]) || new Date().getFullYear();
@@ -100,7 +100,7 @@ export async function GET(request: Request) {
           evidenceLevel: inferEvidenceLevel(pubTypes),
           summary:
             s.authors?.length
-              ? `${s.authors.slice(0, 3).map((a: any) => a.name).join(", ")}${s.authors.length > 3 ? " et al." : ""}`
+              ? `${s.authors.slice(0, 3).map((a: { name?: string }) => a.name).join(", ")}${s.authors.length > 3 ? " et al." : ""}`
               : "Authors not available",
           url: `https://pubmed.ncbi.nlm.nih.gov/${id}/`,
           isNew: isThisYear,
